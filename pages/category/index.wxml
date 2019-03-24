@@ -1,0 +1,21 @@
+<view class="container">
+  <view class='category'> 
+    <block wx:for="{{category}}">
+      <view class='c_box {{c_id == item.id ? "active" : ""}}' id="{{item.id}}" bindtap='getCategory'>{{item.c_name}}</view>
+    </block>
+  </view>
+  <block wx:for="{{bookList}}">
+    <navigator hover-class="nav-hover" url="/pages/detail/index?id={{item.id}}">
+      <view class="book_item"> 
+        <image mode="aspectFit" class="book_item_img" src="{{'http://laravel_web'+item.image_url}}"></image>
+        <view class="book_item_infos">
+            <view class="book_title">{{item.name}}</view>
+            <view class="book_author">作者：{{item.author_name}}</view>
+            <view class="book_tags">标签：{{item.tags}}</view>
+            <view class="book_tags">状态：{{item.status == 1 ? "连载" : "完结"}}</view>
+            <view class="book_tags">点击量：{{item.clicks}}</view>
+        </view>
+      </view>
+    </navigator>
+  </block> 
+</view> 
