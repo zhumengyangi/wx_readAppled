@@ -1,4 +1,4 @@
-<!--pages/chapter/index.wxml-->
+2<!--pages/chapter/index.wxml-->
 <view class='container'>
  <block wx:for="{{chapter_list}}">
         <view class="chapter">

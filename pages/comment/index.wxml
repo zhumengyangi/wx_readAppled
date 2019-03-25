@@ -1,2 +1,15 @@
 <!--pages/comment/index.wxml-->
-<text>pages/comment/index.wxml</text>
+<view class='container'>
+  <form class='comment' bindsubmit='addComment'>
+    <view>
+      <textarea name="content" class='textarea' placeholder='请输入评论内容' maxlength='200'></textarea>
+    </view>
+    <view><button form-type="submit" type="warn">立即评论</button></view>
+  </form>
+  <view class='comment_list' wx:for="{{comment_list}}">
+    <label style='color:#ff0000;'>{{item.username}}说：</label>
+    {{item.content}}
+    <!-- <label style='color:#42Bbca' bindtab='del' id='{{item.id}}'>删除</label> -->
+    <button bindtap='del' id="{{item.id}}" size='mini' type="warn">删除</button>
+  </view>
+</view>

@@ -24,8 +24,9 @@
     </block>  
 
     <view class='bottom'>
-      <navigator class='navigator' url="/pages/read/index?id={chapter_id}&novel_id={{id}}" wx:if="{{chapter_id > 0}}"><button size='mini' type="primary">立即阅读</button></navigator>
+      <navigator class='navigator' url="/pages/read/index?id={{chapter_id}}&novel_id={{id}}" wx:if="{{chapter_id > 0}}"><button size='mini' type="primary">立即阅读</button></navigator>
       <navigator class='navigator' url="/pages/chapter/index?novel_id={{novel_detail.id}}" wx:if="{{chapter_id > 0}}"><button size='mini'  type="warn">查看章节</button></navigator>
+      <navigator class='navigator' url="/pages/comment/index?novel_id={{novel_detail.id}}"><button size='mini'  type="warn">立即评论</button></navigator>
     </view>
 
 </view>
